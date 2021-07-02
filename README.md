@@ -85,6 +85,7 @@ This guide follows the steps as described [here](https://www.jenkins.io/doc/book
             --publish 50000:50000 \
             --volume jenkins-data:/var/jenkins_home \
             --volume jenkins-docker-certs:/certs/client:ro \
+            --volume /var/run/docker.sock:/var/run/docker.sock \
             myjenkins-blueocean:$(git rev-parse HEAD)
     ```
 
