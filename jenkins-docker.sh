@@ -29,4 +29,8 @@ docker run \
     --publish 50000:50000 \
     --volume jenkins-data:/var/jenkins_home \
     --volume jenkins-docker-certs:/certs/client:ro \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
     myjenkins-blueocean:$IMAGE_TAG
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+sudo chmod 666 /var/run/docker.sock
